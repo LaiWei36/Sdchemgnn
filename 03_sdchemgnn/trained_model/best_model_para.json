@@ -1,0 +1,1 @@
+{"in_channels": 98, "out_channels": 64, "aggregators": ["sum", "mean", "min", "max", "std"], "scalers": ["identity"], "numLayers": 3, "edge_dim": 50, "towers": 1, "pre_layers": 1, "post_layers": 1, "divide_input": false, "aggMLP": true, "aggMLP_factor": 0.125, "dropout": 0.1, "norm": "layer"}

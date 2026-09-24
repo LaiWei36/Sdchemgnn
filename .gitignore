@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+work/
+Results/
+*.jsonl
+*.npy
+.venv/
+.dl/
+.pip_cache/
+magsieve_features/
+.DS_Store

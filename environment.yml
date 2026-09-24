@@ -1,0 +1,35 @@
+# Conda environment for SD-ChemGNN and MagSieve (Linux + NVIDIA GPU).
+#
+# Trimmed from the export of the environment the paper's runs used
+# (Python 3.11, PyTorch 2.8.0 + CUDA 12.8, PyTorch Geometric 2.8.0). Only the
+# packages this repository imports are listed; versions are the ones the runs
+# used.
+#
+#   conda env create -f environment.yml
+#   conda activate sdchemgnn
+#
+# The two index lines below pull the CUDA 12.8 builds of torch and
+# torch-scatter. For a different CUDA version, macOS, or a CPU-only machine,
+# or if this file fails, follow the step-by-step install in README.md.
+name: sdchemgnn
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy=2.3.3
+  - scipy=1.17.0
+  - pandas=2.3.3
+  - matplotlib-base=3.10.8
+  - pymatgen=2025.10.7
+  - spglib=2.7.0
+  - pip
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu128
+      - --find-links https://data.pyg.org/whl/torch-2.8.0+cu128.html
+      - torch==2.8.0
+      - torch-geometric==2.8.0
+      - torch-scatter==2.1.2
+      - scikit-learn==1.9.0
+      - ase==3.28.0
+      - tqdm==4.67.1
+      - mp-api==0.46.1        # stage 01 only (Materials Project retrieval)
